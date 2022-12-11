@@ -1,4 +1,4 @@
 const {  } = require("../models");
 
 
-module.exports = pacientesController;
+// module.exports = pacientesController;

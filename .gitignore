@@ -1,2 +1,4 @@
-.vscode/c_cpp_properties.json
 node_modules
+.sql
+.insomnia_backup
+src/database/index.js
