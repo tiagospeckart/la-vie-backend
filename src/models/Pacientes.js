@@ -9,6 +9,7 @@ const Pacientes = db.define(
     }, 
     {
         tableName: '',
+        timestamps: false,
     }
 );
 
