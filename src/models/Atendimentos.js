@@ -9,6 +9,7 @@ const Atendimentos = db.define(
     }, 
     {
         tableName: '',
+        timestamps: false,
     }
 );
 

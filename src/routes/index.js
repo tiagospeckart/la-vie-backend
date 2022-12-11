@@ -1,13 +1,21 @@
 const express = require('express');
 
-// Importar Controllers
+// Controladores
+const atendimentosController = require("../controllers/atendimentosController");
+const pacientesController = require("../controllers/pacientesController");
+const psicologosController = require("../controllers/psicologosController");
+const authController = require("../controllers/authController");
 
-// Importar middlewares e validações
+// Middlewares e validações
+const auth = require('../middlewares/auth');
+const authLoginValidation = require('../validations/auth/login');
+const authCriarPsiValidation = require('../validations/psicologos/create');
 
+// Rotas
 const routes = express.Router();
 
-
-// Rotas Psicólogos
+// Rotas Psi
+routes.get("/psicologos", psicologosController.listarTodosPsi);
 
 // Rotas Pacientes
 
