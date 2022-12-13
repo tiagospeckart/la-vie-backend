@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 
 const DB_NAME = 'clinica_desafio3';
-const DB_USER = '';
+const DB_USER = 'root';
 const DB_PASS = '';
 const DB_CONFIG = {
     dialect: '',
-    host: '',
-    port: 
+    host: 'localhost',
+    port: 3306
 };
 
 // objeto para guardar a conexão do banco de dados

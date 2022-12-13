@@ -1,3 +1,4 @@
 node_modules
 .sql
 .insomnia_backup
+src/database/index.js
