@@ -91,8 +91,7 @@ const psicologosController = {
                         id_psicologos: id,
                     },
                 });
-    
-                res.status(204);
+                res.sendStatus(204);
             };
         } catch (error) {
             return res.status(404).json("Id não encontrado");
