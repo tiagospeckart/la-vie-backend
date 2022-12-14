@@ -1,4 +1,5 @@
-const Atendimento = require("../Models/atendimento");
+const { Atendimentos } = require("../models");
+const { Pacientes } = require("../models");
 const { Op } = require("sequelize");
 
 const controllerAtendimento = {
@@ -31,7 +32,7 @@ const controllerAtendimento = {
                 });
                 }       
 
-            const atendimentos = await Atendimento.findAll(filter);
+            const atendimentos = await Atendimentos.findAll(filter);
             res.status(200).json(atendimentos);
         } catch {
             console.log("Id não encontrado");
@@ -39,13 +40,13 @@ const controllerAtendimento = {
             return res.status(404).json("Id não encontrado");
         }
     },
-      
+
     async cadastrarAtendimento(req, res){
 
         const { psicologo_id, paciente_id, data_atendimento, observacao } = req.body;
 
-        const novoAtendimento = await Atendimento.create({
-            psicologo_id, 
+        const novoAtendimento = await Atendimentos.create({
+            psicologos_id_psicologos: psicologo_id, 
             paciente_id, 
             data_atendimento, 
             observacao

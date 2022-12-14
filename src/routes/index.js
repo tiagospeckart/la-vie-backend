@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Controladores
-const atendimentosController = require("../controllers/atendimentosController");
+const controllerAtendimento = require("../controllers/controllerAtendimento.js");
 const pacientesController = require("../controllers/pacientesController");
 const psicologosController = require("../controllers/psicologosController");
 const authController = require("../controllers/authController");
@@ -28,6 +28,9 @@ routes.delete("/psicologos/:id", requestLog, psicologosController.deletarPsi);
 // Rotas Pacientes
 
 // Rotas Atendimentos
+routes.get("/atendimentos", controllerAtendimento.listarAtendimento);
+routes.get("/atendimentos/:id", controllerAtendimento.listarAtendimento);
+routes.post("/atendimentos/cadastrar", controllerAtendimento.cadastrarAtendimento);
 
 routes.post("/login", authLoginValidation, authController.login);
 
