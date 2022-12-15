@@ -7,22 +7,22 @@ const bcrypt = require('bcryptjs');
 const AuthController = {
 
     async login(req, res) {
-        const { email , senha } = req.body;
+        const { email, senha } = req.body;
 
         const psicologo = await Psicologos.findOne({
             where: {
-                email_psi: email,
+                email,
             },
         });
 
-        if (!psicologo || !bcrypt.compareSync(senha, psicologo.senha)) {
+        if (!psicologo || !bcrypt.compareSync(senha, usuario.senha)) {
             return res.status(401).json("E-mail ou senha inválido, verifique e tente novamente");
         }
 
         const token = jwt.sign({
-            id: psicologo.id_psicologo,
-            email: psicologo.email_psi,
-            nome: psicologo.nome_psi
+            id: psicologo.id,
+            email: psicologo.email,
+            nome: psicologo.nome
         },
             secret.key
         );

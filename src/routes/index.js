@@ -16,9 +16,6 @@ const handleError = require('../middlewares/handleError');
 // Rotas
 const routes = express.Router();
 
-// login
-
-
 // Rotas Psi
 routes.get("/psicologos", psicologosController.listarTodosPsi);
 routes.get("/psicologos/:id", requestLog, psicologosController.listarUmPsi);
@@ -32,6 +29,5 @@ routes.get("/atendimentos", controllerAtendimento.listarAtendimento);
 routes.get("/atendimentos/:id", controllerAtendimento.listarAtendimento);
 routes.post("/atendimentos/cadastrar", controllerAtendimento.cadastrarAtendimento);
 
-routes.post("/login", authLoginValidation, authController.login);
 
 module.exports = routes;
