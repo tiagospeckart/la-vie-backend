@@ -1,4 +1,4 @@
-const AtendimentoModel = require("../models/Atendimentos");
+const { Atendimentos } = require("../models");
 const { Op } = require("sequelize");
 
 const controllerAtendimento = {
@@ -10,7 +10,7 @@ const controllerAtendimento = {
     //},
 	
 	listarAtendimento: async (req, res) => {
-        const atendimentos = await AtendimentoModel.findAll();
+        const atendimentos = await Atendimentos.findAll();
 
         res.json(atendimentos);
     },
@@ -18,7 +18,7 @@ const controllerAtendimento = {
     listarUmAtendimento: async (req, res) => {
         try {
             const { id } = req.params;
-            const atendimentoUnico = await AtendimentoModel.findOne({ 
+            const atendimentoUnico = await Atendimentos.findOne({ 
                     where: { 
                         id: id,
                     },
@@ -33,36 +33,12 @@ const controllerAtendimento = {
         };
     },
 
-    listarAtendimento: async (req, res) => {
-        const atendimentos = await AtendimentoModel.findAll();
-
-        res.json(atendimentos);
-    },
-
-          async listarUmAtendimento(req, res){
-            try {
-              const { id } = req.params;
-              const atendimentoUnico = await AtendimentoModel.findOne({
-                where: {
-                  id,
-                },
-              });
-        
-              if ( !atendimentoUnico ) {
-                error;
-              }
-            return res.status(200).json(atendimentoUnico);
-        
-          } catch (error) {
-            return res.status(404).json("Id não encontrado")
-            };
-    },
-      
     async cadastrarAtendimento(req, res){
 
         const { psicologo_id, paciente_id, data_atendimento, observacao } = req.body;
+        const token_psi = req.auth;
 
-        const novoAtendimento = await AtendimentoModel.create({
+        const novoAtendimento = await Atendimentos.create({
             psicologo_id, 
             paciente_id, 
             data_atendimento, 

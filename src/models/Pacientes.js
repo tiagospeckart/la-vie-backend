@@ -5,14 +5,15 @@ const { DataTypes } = require('sequelize');
 const Pacientes = db.define(
     "Pacientes", 
     {
-            id: {
+            id_pacientes: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                autoIncrement: true,                },
-            nome: {
-             type: DataTypes.STRING
+                autoIncrement: true,                
             },
-            email: {
+            nome_pac: {
+                type: DataTypes.STRING
+            },
+            email_pac: {
                 type: DataTypes.STRING
             },
                 data_nasc: {

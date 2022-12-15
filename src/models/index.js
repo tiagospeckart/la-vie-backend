@@ -5,11 +5,11 @@ const Psicologos = require("./Psicologos");
 // Indicar todas as relações entre entidades
 
 Psicologos.hasMany(Pacientes, {
-    foreignKey: "psicologos_id_psicologos",
+    foreignKey: "id_pacientes",
 });
 
 Pacientes.belongsTo(Psicologos,{
-    foreignKey: "id_psicologo", // será??
+    foreignKey: "psicologos_id_psicologos", // será??
 });
 
 Psicologos.hasMany(Atendimentos, {
