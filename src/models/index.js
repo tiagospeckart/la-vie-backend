@@ -16,11 +16,11 @@ Psicologos.hasMany(Atendimentos, {
     foreignKey: "psicologos_id_psicologos",
 });
 
-Atendimentos.belongsTo(Psicologos, {
+Atendimentos.hasOne(Psicologos, {
     foreignKey: "id_psicologos",
 });
 
-Atendimentos.belongsTo(Pacientes, {
+Atendimentos.hasOne(Pacientes, {
     foreignKey: "id_pacientes",
 });
 
