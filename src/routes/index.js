@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Controladores
-const atendimentosController = require("../controllers/atendimentosController");
+const atendimentosController = require("../controllers/atendimentosController.js");
 const pacientesController = require("../controllers/pacientesController");
 const psicologosController = require("../controllers/psicologosController");
 const authController = require("../controllers/authController");
@@ -16,9 +16,6 @@ const createValidation = require("../validations/pacientes/create");
 
 // Rotas
 const routes = express.Router();
-
-// login
-
 
 // Rotas Psi
 routes.get("/psicologos", psicologosController.listarTodosPsi);
@@ -35,6 +32,9 @@ routes.put("/pacientes/:id", createValidation, pacientesController.atualizarPaci
 routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
 
 // Rotas Atendimentos
+routes.get("/atendimentos", atendimentosController.listarAtendimento);
+routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
+routes.post("/atendimentos", auth, atendimentosController.cadastrarAtendimento);
 
 routes.post("/login", authLoginValidation, authController.login);
 
