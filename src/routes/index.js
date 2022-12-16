@@ -33,7 +33,7 @@ routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
 
 // Rotas Atendimentos
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
-routes.get("/atendimentos/:id", atendimentosController.listarAtendimento);
+routes.get("/atendimentos/:id", atendimentosController.listarUmAtendimento);
 routes.post("/atendimentos", auth, atendimentosController.cadastrarAtendimento);
 
 routes.post("/login", authLoginValidation, authController.login);

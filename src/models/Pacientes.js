@@ -9,19 +9,12 @@ const Pacientes = db.define("Pacientes", {
     },
     nome_pac: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     email_pac: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     idade: {
       type: DataTypes.DATE,
-      allowNull: false
-    },
-    psicologos_id_psicologos: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     },
   },
   {

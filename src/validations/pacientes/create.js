@@ -5,6 +5,5 @@ module.exports = validate({
         nome_pac: Joi.string().required(),
         email_pac: Joi.string().required(),
         idade: Joi.date().required(),
-        psicologos_id_psicologos: Joi.number().required()
     })
 });

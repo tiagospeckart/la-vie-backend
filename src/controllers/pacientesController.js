@@ -32,9 +32,9 @@ const pacientesController = {
 
   async cadastrarPaciente(req, res) {
     try {
-        const { nome_pac, email_pac, idade, psicologos_id_psicologos } = req.body;
+        const { nome_pac, email_pac, idade } = req.body;
 
-        if ( !nome_pac || !email_pac || !idade || !psicologos_id_psicologos ) {
+        if ( !nome_pac || !email_pac || !idade ) {
           return res.status(400).json("Informações incompletas. Valide e tente novamente")
         }
 
@@ -42,7 +42,6 @@ const pacientesController = {
         nome_pac,
         email_pac,
         idade,
-        psicologos_id_psicologos
         })
 
         return res.status(201).json(newPaciente);
@@ -69,7 +68,6 @@ const pacientesController = {
           nome_pac,
           email_pac,
           idade,
-          psicologos_id_psicologos
         },
         {
           where: {
