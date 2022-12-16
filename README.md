@@ -31,7 +31,7 @@ Essa API deve permitir criar:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Lilianor">
+      <a href="https://github.com/claudiaarai">
         <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Foto de Claudia Arai "/><br>
         <sub>
           <b>Claudia Arai</b>
