@@ -34,7 +34,7 @@ Essa API deve permitir criar:
       <a href="https://github.com/Lilianor">
         <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Foto de Claudia Arai "/><br>
         <sub>
-          <b>Lilian O. Roberto</b>
+          <b>Claudia Arai</b>
         </sub>
       </a>
     </td>
