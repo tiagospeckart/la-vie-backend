@@ -8,6 +8,10 @@ Psicologos.hasMany(Atendimentos, {
     foreignKey: "psicologos_id_psicologos",
 });
 
+Pacientes.hasMany(Atendimentos,{
+    foreignKey: "pacientes_id",
+})
+
 Atendimentos.hasOne(Psicologos, {
     foreignKey: "id_psicologos",
 });

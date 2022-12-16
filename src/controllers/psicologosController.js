@@ -57,7 +57,7 @@ const psicologosController = {
 
             const newSenha = bcrypt.hashSync(senha, 10);
 
-            const psicologo_atalizado = await Psicologos.update({
+            await Psicologos.update({
                 nome_psi,
                 email_psi,
                 senha: newSenha,
@@ -68,7 +68,7 @@ const psicologosController = {
                     id_psicologos: id,
                 },    
             });
-            res.status(201).json(psicologo_atalizado);
+            res.status(201).json(umPsi);
         } catch (error) {
             return res.status(404).json("Id não encontrado");
         };

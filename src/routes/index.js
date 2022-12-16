@@ -8,11 +8,12 @@ const authController = require("../controllers/authController");
 
 // Middlewares e validações
 const auth = require('../middlewares/auth');
-const authLoginValidation = require('../validations/auth/login');
-const authCriarPsiValidation = require('../validations/psicologos/create');
 const requestLog = require('../middlewares/requestLog');
 const handleError = require('../middlewares/handleError');
-const createValidation = require("../validations/pacientes/create");
+const authLoginValidation = require('../validations/auth/login');
+const authCriarPsiValidation = require('../validations/psicologos/create');
+const authCriarAtendimentoValidation = require('../validations/atendimentos/create');
+const createPacienteValidation = require("../validations/pacientes/create");
 
 // Rotas
 const routes = express.Router();
@@ -27,15 +28,16 @@ routes.delete("/psicologos/:id", requestLog, psicologosController.deletarPsi);
 // Rotas Pacientes
 routes.get("/pacientes", pacientesController.listarPacientes);
 routes.get("/pacientes/:id", pacientesController.listarUmPaciente);
-routes.post("/pacientes", createValidation, pacientesController.cadastrarPaciente);
-routes.put("/pacientes/:id", createValidation, pacientesController.atualizarPaciente);
+routes.post("/pacientes", createPacienteValidation, pacientesController.cadastrarPaciente);
+routes.put("/pacientes/:id", createPacienteValidation, pacientesController.atualizarPaciente);
 routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
 
 // Rotas Atendimentos
 routes.get("/atendimentos", atendimentosController.listarAtendimento);
 routes.get("/atendimentos/:id", atendimentosController.listarUmAtendimento);
-routes.post("/atendimentos", auth, atendimentosController.cadastrarAtendimento);
+routes.post("/atendimentos", auth, handleError, authCriarAtendimentoValidation, atendimentosController.cadastrarAtendimento);
 
+// Login
 routes.post("/login", authLoginValidation, authController.login);
 
 module.exports = routes;

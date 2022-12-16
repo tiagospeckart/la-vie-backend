@@ -2,12 +2,6 @@ const { Atendimentos } = require("../models");
 const { Op } = require("sequelize");
 
 const controllerAtendimento = {
-    
-    //listarAtendimento: async (req, res) => {
-      //  const listaAtendimentos = await Atendimento.findAll();
-
-        //res.json(listaAtendimentos);
-    //},
 	
 	listarAtendimento: async (req, res) => {
         const atendimentos = await Atendimentos.findAll();
@@ -33,21 +27,23 @@ const controllerAtendimento = {
         };
     },
 
-    async cadastrarAtendimento(req, res){
+    cadastrarAtendimento: async (req, res) => {
+        try  {
+            const { pacientes_id, data_atendimento, observacao } = req.body;
+            console.log(req.auth);
+            const psicologo = req.auth;
 
-        const { pacientes_id, data_atendimento, observacao } = req.body;
-        console.log(req.auth);
-
-        const token = req.auth;
-
-        const novoAtendimento = await Atendimentos.create({
-            psicologos_id_psicologos: token.id,
-            pacientes_id, 
-            data_atendimento, 
-            observacao
-        })
+            const novoAtendimento = await Atendimentos.create({
+                psicologos_id_psicologos: psicologo.id,
+                pacientes_id, 
+                data_atendimento, 
+                observacao
+        });
         res.json(novoAtendimento);
-    }
+        } catch (error) {
+            res.json(error);
+        };
+    },
 };
 
 module.exports = controllerAtendimento;

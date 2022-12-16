@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const DB_NAME = 'clinica_desafio3';
-const DB_USER = 'root';
+const DB_USER = '';
 const DB_PASS = '';
 const DB_CONFIG = {
     dialect: '',
