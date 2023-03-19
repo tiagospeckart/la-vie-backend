@@ -1,28 +1,27 @@
-const Atendimentos = require("./Atendimentos");
-const Pacientes = require("./Pacientes");
-const Psicologos = require("./Psicologos");
+const Appointments = require("./Appointments");
+const Clients = require("./Clients");
+const Psychologists = require("./Psychologists");
 
-// Indicar todas as relações entre entidades
+// Indicate all the relationships between entities
 
-Psicologos.hasMany(Atendimentos, {
-    foreignKey: "psicologos_id_psicologos",
+Psychologists.hasMany(Appointments, {
+    foreignKey: "idPsychologists",
 });
 
-Pacientes.hasMany(Atendimentos,{
-    foreignKey: "pacientes_id",
-})
-
-Atendimentos.hasOne(Psicologos, {
-    foreignKey: "id_psicologos",
+Clients.hasMany(Appointments, {
+    foreignKey: "idClients",
 });
 
-Atendimentos.hasOne(Pacientes, {
-    foreignKey: "id_pacientes",
+Appointments.belongsTo(Psychologists, {
+    foreignKey: "idPsychologists",
 });
 
+Appointments.belongsTo(Clients, {
+    foreignKey: "idClients",
+});
 
 module.exports = {
-    Atendimentos,
-    Pacientes,
-    Psicologos
+    Appointments,
+    Clients,
+    Psychologists,
 };
