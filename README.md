@@ -50,7 +50,7 @@ To access the API endpoints locally:
   <tr>
     <td align="center">
       <a href="https://github.com/tiagospeckart">
-        <img src="https://avatars.githubusercontent.com/u/75458110?v=4" width="100px;" alt="Foto de Tiago Martins no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/75458110?v=4" width="100px;" alt="Tiago Martins's Picture"/><br>
         <sub>
           <b>Tiago M. Speckart</b>
         </sub>
@@ -58,7 +58,7 @@ To access the API endpoints locally:
     </td>
     <td align="center">
       <a href="https://github.com/claudiaarai">
-        <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Foto de Claudia Arai "/><br>
+        <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Claudia Arai's Picture"/><br>
         <sub>
           <b>Claudia Arai</b>
         </sub>
@@ -66,7 +66,7 @@ To access the API endpoints locally:
     </td>
     <td align="center">
       <a href="https://github.com/MBoneli92">
-        <img src="https://avatars.githubusercontent.com/u/116234582?v=4" width="100px;" alt="Foto de Matheus Boneli"/><br>
+        <img src="https://avatars.githubusercontent.com/u/116234582?v=4" width="100px;" alt="Matheus Boneli's Picture"/><br>
         <sub>
           <b>Matheus Boneli</b>
         </sub>
