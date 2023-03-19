@@ -1,4 +1,4 @@
-const { Psychologists } = require('../models');
+const PsychologistsModel = require('../models/Psychologists');
 const jwt = require('jsonwebtoken');
 const config = require('../configs/config');
 const bcrypt = require('bcryptjs');
@@ -9,7 +9,7 @@ const AuthController = {
     async login(req, res) {
         const { email , senha } = req.body;
 
-        const psychologist = await Psychologists.findOne({
+        const psychologist = await PsychologistsModel.findOne({
             where: {
                 email_psi: email,
             },
