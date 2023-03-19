@@ -11,9 +11,9 @@ const auth = require('../middlewares/auth');
 const requestLog = require('../middlewares/requestLog');
 const handleError = require('../middlewares/handleError');
 const authLoginValidation = require('../validations/auth/login');
-const authCriarPsiValidation = require('../validations/psicologos/create');
-const authCriarAtendimentoValidation = require('../validations/atendimentos/create');
-const createPacienteValidation = require("../validations/pacientes/create");
+const authCriarPsiValidation = require('../validations/psychologists/create');
+const authCriarAtendimentoValidation = require('../validations/appointments/create');
+const createPacienteValidation = require("../validations/clients/create");
 
 // Rotas
 const routes = express.Router();
