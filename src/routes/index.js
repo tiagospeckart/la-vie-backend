@@ -1,41 +1,41 @@
 const express = require('express');
 
-// Controladores
-const atendimentosController = require("../controllers/atendimentosController.js");
-const pacientesController = require("../controllers/pacientesController");
-const psicologosController = require("../controllers/psicologosController");
+// Controllers
+const appointmentsController = require("../controllers/appointmentsController.js");
+const clientsController = require("../controllers/clientsController");
+const psychologistsController = require("../controllers/psychologistsController");
 const authController = require("../controllers/authController");
 
-// Middlewares e validações
+// Middlewares and validations
 const auth = require('../middlewares/auth');
 const requestLog = require('../middlewares/requestLog');
 const handleError = require('../middlewares/handleError');
 const authLoginValidation = require('../validations/auth/login');
-const authCriarPsiValidation = require('../validations/psicologos/create');
-const authCriarAtendimentoValidation = require('../validations/atendimentos/create');
-const createPacienteValidation = require("../validations/pacientes/create");
+const psyCreateValidation = require('../validations/psychologists/create');
+const appointCreateValidation = require('../validations/appointments/create');
+const clientCreateValidation = require("../validations/clients/create");
 
-// Rotas
+// Routes
 const routes = express.Router();
 
-// Rotas Psi
-routes.get("/psicologos", psicologosController.listarTodosPsi);
-routes.get("/psicologos/:id", requestLog, psicologosController.listarUmPsi);
-routes.post("/psicologos", authCriarPsiValidation, psicologosController.cadastrarPsi);
-routes.put("/psicologos/:id", authCriarPsiValidation, psicologosController.atualizarPsi);
-routes.delete("/psicologos/:id", requestLog, psicologosController.deletarPsi);
+// Psychologists routes
+routes.get("/psychologists", psychologistsController.listAllPsychologists);
+routes.get("/psychologists/:id", requestLog, psychologistsController.listOnePsychologist);
+routes.post("/psychologists", psyCreateValidation, psychologistsController.createPsychologist);
+routes.put("/psychologists/:id", psyCreateValidation, psychologistsController.updatePsychologist);
+routes.delete("/psychologists/:id", requestLog, psychologistsController.deletePsychologist);
 
-// Rotas Pacientes
-routes.get("/pacientes", pacientesController.listarPacientes);
-routes.get("/pacientes/:id", pacientesController.listarUmPaciente);
-routes.post("/pacientes", createPacienteValidation, pacientesController.cadastrarPaciente);
-routes.put("/pacientes/:id", createPacienteValidation, pacientesController.atualizarPaciente);
-routes.delete("/pacientes/:id", pacientesController.deletarPaciente);
+// Client routes
+routes.get("/clients", clientsController.listClients);
+routes.get("/clients/:id", clientsController.findOneClient);
+routes.post("/clients", clientCreateValidation, clientsController.createClient);
+routes.put("/clients/:id", clientCreateValidation, clientsController.updateClient);
+routes.delete("/clients/:id", clientsController.deleteClient);
 
-// Rotas Atendimentos
-routes.get("/atendimentos", atendimentosController.listarAtendimento);
-routes.get("/atendimentos/:id", atendimentosController.listarUmAtendimento);
-routes.post("/atendimentos", auth, handleError, authCriarAtendimentoValidation, atendimentosController.cadastrarAtendimento);
+// Appointments routes
+routes.get("/appointments", appointmentsController.listAppointments);
+routes.get("/appointments/:id", appointmentsController.findAppointment);
+routes.post("/appointments", auth, handleError, appointCreateValidation, appointmentsController.createAppointment);
 
 // Login
 routes.post("/login", authLoginValidation, authController.login);

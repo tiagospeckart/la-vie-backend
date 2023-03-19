@@ -1,34 +1,31 @@
-const Sequelize = require('sequelize');
+const config = require("../configs/config");
+const Sequelize = require("sequelize");
 
-const DB_NAME = 'clinica_desafio3';
-const DB_USER = '';
-const DB_PASS = '';
-const DB_CONFIG = {
-    dialect: '',
-    host: 'localhost',
-    port: 3306
-};
-
-// objeto para guardar a conexão do banco de dados
-let db = {};
+let dbConnection = null;
 
 try {
-    db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);
+    dbConnection = new Sequelize(
+        config.db.name,
+        config.db.user,
+        config.db.pass,
+        config.db.config
+    );
 } catch (error) {
-    console.error("Erro ao tentar uma conexão com o banco de dados");
+    console.error("Error attempting to connect to the database");
 }
 
-async function hasConnection(){
+async function hasConnection() {
     try {
-        await db.authenticate();
-        console.log("Banco de dados conectado!");
+        await dbConnection.authenticate();
+        console.log("Database connected!");
     } catch (error) {
-        console.error("Erro ao tentar se conectar ao banco de dados");
+        console.error("Error attempting to connect to the database");
     }
-};
+}
 
-Object.assign(db, {
+const db = {
+    connection: dbConnection,
     hasConnection,
-});
+};
 
 module.exports = db;

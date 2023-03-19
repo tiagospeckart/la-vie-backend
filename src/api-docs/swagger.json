@@ -1,0 +1,39 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "la_vie",
+    "description": "An API for a simple system of a psychoterapy clinic. Project #3 of [Gama Academy](https://gama.academy/) webdevelopment course. \n\nUseful links:\n  - [Backend project repository](https://github.com/tiagospeckart/la-vie-backend)",
+    "contact": {
+      "name": "API Support",
+      "email": "tiagospeckart@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/license/mit/"
+    },
+    "version": "0.0.2"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Localhost for Development"
+    }
+  ],
+  "paths": {
+    "/psychologists": {
+      "get": {
+        "tags": [
+          "Psychologists"
+        ],
+        "description": "returns all registered psychologists",
+        "operationId": "getPsychologists",
+        "responses": {
+          "200": {
+            "description": "All the psychologists"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

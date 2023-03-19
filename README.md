@@ -1,4 +1,6 @@
-# Projeto 3 da Gama Academy
+# La Vie Psychology Clinic API
+
+This repository is the third project for the Gama Academy Web Development course, featuring a Web API for a fictional psychology clinic called *La Vie*.
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/tiagospeckart/API-la-vie?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/tiagospeckart/API-la-vie?style=for-the-badge)
@@ -6,25 +8,49 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/tiagospeckart/API-la-vie?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/tiagospeckart/API-la-vie?style=for-the-badge)
 
-## Objetivo
-Utilizar o que foi aprendido em **Node.js**, **Express** e Banco de dados **MySQL** para criar uma Web API para uma clínica de psicologia fictícia chamada *La Vie*.
+## Objective
+Utilize the knowledge acquired in **Node.js**, **Express**, and **MySQL** database to create a Web API for a fictional psychology clinic called La Vie.
 
-## [Documentação da API](https://documenter.getpostman.com/view/24470850/2s8YzTU2ZV)
+## [La Vie API Documentation (still in refactoring process)](https://documenter.getpostman.com/view/24470850/2s8YzTU2ZV)
 
-## Stacks
+## Tech Stack
 
-## Especificações
-Essa API deve permitir criar:
-- Registros de psicólogos
-- Cadastros de pacientes
-- Registro de prontuários
+- JavaScript
+- Node.js
+- Express
+- MySQL
+
+## Specifications
+
+This API should allow the creation of:
+- Psychologist records
+- Patient registrations
+- Clinical record entries
+
+## Installation
+
+1. Create your own `.env` file according to `example.env`
+2. Download packages `npm i`
+3. Test server `npm run dev`
+
+### Creating the database
+
+5. `npm run dbbuild`
+6. If necessary, rebuild the DB with `npm run dbrebuild`
+
+## API Endpoints
+
+To access the API endpoints locally:
+
+1. Run server with `npm run dev`
+2. Access URL `{host}:{port}/api-docs` -> still in the writing process after major refactoring
 
 ## Equipe
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/tiagospeckart">
-        <img src="https://avatars.githubusercontent.com/u/75458110?v=4" width="100px;" alt="Foto de Tiago Martins no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/75458110?v=4" width="100px;" alt="Tiago Martins's Picture"/><br>
         <sub>
           <b>Tiago M. Speckart</b>
         </sub>
@@ -32,7 +58,7 @@ Essa API deve permitir criar:
     </td>
     <td align="center">
       <a href="https://github.com/claudiaarai">
-        <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Foto de Claudia Arai "/><br>
+        <img src="https://avatars.githubusercontent.com/u/114929949?v=4" width="100px;" alt="Claudia Arai's Picture"/><br>
         <sub>
           <b>Claudia Arai</b>
         </sub>
@@ -40,7 +66,7 @@ Essa API deve permitir criar:
     </td>
     <td align="center">
       <a href="https://github.com/MBoneli92">
-        <img src="https://avatars.githubusercontent.com/u/116234582?v=4" width="100px;" alt="Foto de Matheus Boneli"/><br>
+        <img src="https://avatars.githubusercontent.com/u/116234582?v=4" width="100px;" alt="Matheus Boneli's Picture"/><br>
         <sub>
           <b>Matheus Boneli</b>
         </sub>
