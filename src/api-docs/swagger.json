@@ -11,12 +11,29 @@
       "name": "MIT",
       "url": "https://opensource.org/license/mit/"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
   },
   "servers": [
     {
       "url": "http://localhost:3000",
       "description": "Localhost for Development"
     }
-  ]
+  ],
+  "paths": {
+    "/psychologists": {
+      "get": {
+        "tags": [
+          "Psychologists"
+        ],
+        "description": "returns all registered psychologists",
+        "operationId": "getPsychologists",
+        "responses": {
+          "200": {
+            "description": "All the psychologists"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
 }
